@@ -59,12 +59,6 @@ LiveTranscription is an iOS app that captures microphone input, streams the audi
 3. Grant **Microphone Access** when prompted
 4. Click **“Start Streaming”** and start speaking!
 
-
-## 🎤 Future Improvements
-- Support for multiple languages
-- Real-time formatting & punctuation
-- Voice commands integration
-
 ## 📝 License
 This project is open-source under the MIT License.
 
