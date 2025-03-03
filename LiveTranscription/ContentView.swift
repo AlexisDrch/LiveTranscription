@@ -8,17 +8,37 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject private var webSocketManager = WebSocketManager()
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Text("Live Transcription")
+                .font(.largeTitle)
+                .padding()
+            
+            Text(webSocketManager.transcription)
+                .padding()
+                .frame(height: 300)
+                .border(Color.gray, width: 1)
+            
+            HStack {
+                Button("Start Streaming") {
+                    webSocketManager.startStreaming()
+                }
+                .padding()
+                .background(Color.green)
+                .foregroundColor(.white)
+                .cornerRadius(10)
+                
+                Button("Stop Streaming") {
+                    webSocketManager.stopStreaming()
+                }
+                .padding()
+                .background(Color.red)
+                .foregroundColor(.white)
+                .cornerRadius(10)
+            }
         }
         .padding()
     }
-}
-
-#Preview {
-    ContentView()
 }
